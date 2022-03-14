@@ -1,0 +1,320 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: consolas;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: white;
+}
+
+.road {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    background: #300;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    perspective: 500px;
+}
+
+.road::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #ffffff, #ffffff 50%, transparent 50%, transparent 50%);
+    background-size: 50px;
+    animation: madbus 0.05s linear infinite;
+}
+
+@keyframes madbus {
+    0% {
+        background-position: 50px 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+img {
+    width: 250px;
+}
+
+.madbus {
+    position: absolute;
+    left: 15%;
+    width: 200px;
+    height: 80px;
+    background: #f4b603;
+    border-radius: 10px;
+    box-shadow: -10px 10px rgba(0, 0, 0, 0.25);
+    transform-style: preserve-3d;
+    perspective: 800px;
+    animation: animate_mad 2s linear infinite;
+    z-index: 10;
+}
+
+.madbus:nth-child(2) {
+    left: initial;
+    right: 20%;
+    animation: animate_mad 4s linear infinite;
+    animation-delay: -1s;
+    z-index: 9;
+}
+
+
+
+@keyframes animate_mad {
+    0% {
+        transform: translateX(20px) translateY(-20px);
+    }
+
+    25% {
+        transform: translateX(-10px) translateY(0px);
+    }
+
+    50% {
+        transform: translateX(20px) translateY(-20px);
+    }
+
+    75% {
+        transform: translateX(-10px) translateY(0px);
+    }
+
+    100% {
+        transform: translateX(20px) translateY(-20px);
+    }
+}
+
+
+.madbus::before {
+    content: '';
+    position: absolute;
+    top: 12px;
+    left: 2px;
+    width: 5px;
+    height: 15px;
+    border-radius: 2px;
+    background: #fc3c25;
+    box-shadow: 0 42px #fc3c25;
+}
+
+.sport {
+    position: absolute;
+    left: 40%;
+    width: 200px;
+    transform-style: preserve-3d;
+    perspective: 2000px;
+    animation: animate_mad 5s linear infinite;
+    z-index: 20;
+}
+
+.sport::before {
+    content: '';
+    position: absolute;
+    top: 22px;
+    left: 2px;
+    width: 5px;
+    height: 15px;
+    border-radius: 2px;
+    background: #fc3c25;
+    box-shadow: 0 62px #fc3c25;
+}
+
+.sport::after {
+    content: '';
+    position: absolute;
+    top: 22px;
+    right: -38px;
+    width: 10px;
+    height: 18px;
+    border-radius: 2px;
+    background: #ffffff;
+    box-shadow: 0 58px #ffffff;
+}
+
+.sport span::before {
+    content: 'Taxi';
+    position: absolute;
+    top: 38%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    background: #ffffff;
+    padding: 2px;
+    text-transform: uppercase;
+    font-size: 1em;
+    font-weight: 1000;
+    letter-spacing: 0.1em;
+    border-radius: 2px;
+    box-shadow: 0 0 0 0px #0005;
+    z-index: 10;
+    transform: rotate(270deg);
+}
+
+.madbus::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    right: 2px;
+    width: 6px;
+    height: 16px;
+    border-radius: 2px;
+    background: #ffffff;
+    box-shadow: 0 44px #ffffff;
+}
+
+.madbus span {
+    position: absolute;
+    inset: 5px 10px;
+    background: #fdd206;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.madbus span::before {
+    content: 'Mad Bus';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #ffffff;
+    padding: 2px;
+    text-transform: uppercase;
+    font-size: 1em;
+    font-weight: 1000;
+    letter-spacing: 0.1em;
+    border-radius: 2px;
+    box-shadow: 0 0 0 0px #0005;
+    z-index: 10;
+}
+
+.madbus span sway {
+    position: absolute;
+    inset: 0 0;
+    background: #111;
+    border-radius: 10px;
+}
+
+.madbus span sway::before {
+    content: '';
+    position: absolute;
+    inset: 2px;
+    background: #fdd206;
+    border-radius: 5px;
+}
+
+.madbus span sway::after {
+    content: '';
+    position: absolute;
+    inset: 0 88px;
+    background: #fdd206;
+
+}
+
+
+.madbus span i {
+    position: absolute;
+    inset: 0;
+}
+
+.madbus span i::before {
+    content: '';
+    position: absolute;
+    top: 7px;
+    left: 0px;
+    width: 40px;
+    height: 5px;
+    background: #fdd206;
+    transform-origin: left;
+    transform: rotate(8deg);
+    box-shadow: 100px 34px #fdd206;
+}
+
+.madbus span i::after {
+    content: '';
+    position: absolute;
+    bottom: 7px;
+    right: 0px;
+    width: 40px;
+    height: 5px;
+    background: #fdd206;
+    transform-origin: right;
+    transform: rotate(-8deg);
+    box-shadow: 100px -34px #fdd206;
+}
+
+.headlamp {
+    position: absolute;
+    top: 5px;
+    right: -2px;
+    width: 10px;
+    height: 70px;
+    background: #000;
+}
+
+.headlamp::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 0;
+    width: 150px;
+    height: 16px;
+    background: linear-gradient(90deg, #fff6, transparent);
+    transform-origin: left;
+    transform: perspective(200px) rotateY(-50deg);
+}
+
+.headlamp::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 150px;
+    height: 16px;
+    background: linear-gradient(90deg, #fff6, transparent);
+    transform-origin: left;
+    transform: perspective(200px) rotateY(-50deg);
+}
+
+
+.sportlamp {
+    position: absolute;
+    top: 20px;
+    right: -42px;
+    width: 16px;
+    height: 80px;
+    background: #000;
+}
+
+.sportlamp::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 0;
+    width: 150px;
+    height: 16px;
+    background: linear-gradient(90deg, #fff6, transparent);
+    transform-origin: left;
+    transform: perspective(200px) rotateY(-50deg);
+}
+
+.sportlamp::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 150px;
+    height: 16px;
+    background: linear-gradient(90deg, #fff6, transparent);
+    transform-origin: left;
+    transform: perspective(200px) rotateY(-50deg);
+}
