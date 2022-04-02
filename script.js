@@ -1,8 +1,8 @@
 var horn = document.getElementById("horn")
 
-window.onload = function () {
-    horn.muted = true;
-    window.onclick = horn.play();
-    horn.muted = true;
-    window.onclick = horn.play();
+function soundHorn() {
+    window.onmouseenter = horn.play();
+    window.onmouseleave = horn.muted()
+    window.onmouseenter = horn.play();
+    window.onmouseleave = horn.muted()
 }
