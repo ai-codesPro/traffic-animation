@@ -10,7 +10,13 @@
 </head>
 
 <body>
+
+    <audio id="horn" src="./3GYPRES-boat-horn.ogg" loop="loop" autoplay="autoplay"></audio>
+    <audio id="horn1" src="./3GYPRES-boat-horn.mp3" loop="loop" autoplay="autoplay"></audio>
+
+
     <div class="road">
+
 
         <div class="madbus">
             <div class="headlamp"></div>
@@ -31,7 +37,17 @@
             <img src="sport.png" alt="">
             <span></span>
         </div>
+
     </div>
+    <script>
+        window.onload = function () {
+            document.getElementById("horn1").play();
+        }
+    </script>
+
+    <script src="script.js"></script>
+
+
 </body>
 
 </html>
